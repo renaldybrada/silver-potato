@@ -1,4 +1,4 @@
-# Revision history for haskell-project
+# Revision history for pong
 
 ## 0.1.0.0 -- YYYY-mm-dd
 

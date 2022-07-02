@@ -1,5 +1,5 @@
 cabal-version:      2.4
-name:               haskell-project
+name:               pong
 version:            0.1.0.0
 
 -- A short (one-line) description of the package.
@@ -21,14 +21,14 @@ maintainer:         renaldybrada@gmail.com
 -- category:
 extra-source-files: CHANGELOG.md
 
-executable haskell-project
+executable pong
     main-is:          Main.hs
 
     -- Modules included in this executable, other than Main.
-    other-modules: Menu, UserModel
+    other-modules: PongConstants, CetakMonad
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
-    build-depends:    base ^>=4.16.1.0, split^>=0.2.3.4
+    build-depends:    base ^>=4.16.1.0, gloss ^>=1.13.2.2, random^>=1.2.1.1, mtl^>=2.2.2
     hs-source-dirs:   app
     default-language: Haskell2010
