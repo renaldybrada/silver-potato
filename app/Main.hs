@@ -15,7 +15,7 @@ drawBalls :: [Ball] -> Picture
 drawBalls balls = do
   pictures (zipWith drawBall colors balls)
   where
-    colors = cycle [yellow]
+    colors = cycle [yellow, red]
     drawBall c ((x,y), (dx,dy)) 
       = translate x y (color c (circleSolid ballRadius))
 
@@ -54,6 +54,8 @@ main :: IO ()
 main = do
   execStateT cetakState "\n\nAplikasi Bounce Ball"
   execStateT cetakState "====================\n"
+  execStateT cetakState "ball amount (1 - 10) :"
+  ballAmount <- readLn
   execStateT cetakState "ball radius (30 px) :"
   ballRad <- getLine
   execStateT cetakState "ball speed (100) :"
@@ -64,7 +66,7 @@ main = do
   maxWidth <- readLn
   execStateT cetakState "frame height (300): "
   maxHeight <- readLn
-  balls <- forM [1..numBalls] (\_ -> randomBall maxWidth maxHeight ballSpeed)
+  balls <- forM [1..ballAmount] (\_ -> randomBall maxWidth maxHeight ballSpeed)
   simulate
     (window maxWidth maxHeight) 
     black 
